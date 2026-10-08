@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyBook – Customised Notebook Creator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-icon">📓</div>
+          <div>
+            <p class="eyebrow">AI Notebook Helper</p>
+            <h1>MyBook</h1>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <button id="generalChatBtn" class="ghost-button" type="button" aria-pressed="false">Ask anything</button>
+          <button id="resetBtn" class="ghost-button" type="button">Start Again</button>
+        </div>
+      </header>
+
+      <main class="app-layout">
+        <section class="chat-panel">
+          <div id="messages" class="messages" aria-live="polite"></div>
+
+          <div class="choices-wrap">
+            <div id="choices" class="choices"></div>
+            <button id="continueBtn" type="button" class="continue-btn hidden">Continue</button>
+          </div>
+
+          <form id="chatForm" class="input-bar">
+            <input
+              id="userInput"
+              type="text"
+              placeholder="Type your answer or say, 'use a space theme'..."
+              autocomplete="off"
+            />
+            <button type="submit">Send</button>
+          </form>
+        </section>
+
+        <aside class="preview-panel">
+          <div class="summary-card">
+            <p class="summary-tag">Notebook Preview</p>
+            <h2 id="notebookTitle">My Special Notebook</h2>
+            <button id="exportPdfBtn" class="pdf-button" type="button">Download Notebook PDF</button>
+            <div class="cover-preview theme-space" id="coverPreview">
+              <div class="cover-art">
+                <span class="cover-emoji" id="coverEmoji">🚀</span>
+              </div>
+              <div class="cover-text">
+                <span class="cover-badge">MyBook</span>
+                <span id="coverLabel">Space Explorer</span>
+              </div>
+            </div>
+
+            <div class="stat-grid">
+              <div>
+                <span>For</span>
+                <strong id="summaryClass">Class 3</strong>
+              </div>
+              <div>
+                <span>Pages</span>
+                <strong id="summaryPages">36</strong>
+              </div>
+            </div>
+
+            <div class="section-block">
+              <h3>Recommended Format</h3>
+              <p id="summaryFormat">Ruled pages, drawing pages, and activity tasks.</p>
+            </div>
+
+            <div class="section-block">
+              <h3>Top Sections</h3>
+              <ul id="summarySections"></ul>
+            </div>
+
+            <div class="section-block">
+              <h3>Customisation</h3>
+              <p id="summaryCustomisation">Name, favourite colours, sticker space, and cover design.</p>
+            </div>
+
+            <div class="page-preview-card" id="pagePreviewCard">
+              <div class="page-preview-header">
+                <span>Inside pages</span>
+                <div class="page-preview-actions">
+                  <span id="pagePreviewTheme">Space theme</span>
+                  <button id="togglePagesBtn" class="page-toggle-btn" type="button">Open</button>
+                </div>
+              </div>
+
+              <div class="pages-grid" id="pagesGrid">
+                <div class="book-page">
+                  <div class="page-lines"></div>
+                  <div class="page-lines"></div>
+                  <div class="page-lines short"></div>
+                </div>
+                <div class="book-page illustration-page">
+                  <div class="illustration-scene" id="pageIllustration"></div>
+                </div>
+                <div class="book-page activity-page">
+                  <div class="activity-box"></div>
+                  <div class="activity-box"></div>
+                  <div class="activity-box"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="script.js?v=4"></script>
+  </body>
+</html>
